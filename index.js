@@ -34,8 +34,12 @@ app.post('/getAccessToken', async function (req, res) {
   }
 });
 
-module.exports = app;
+app.get('/', (req, res) => {
+  res.send('Hey this is task API running 🥳');
+});
 
-// app.listen(process.env.PORT || 4000, function () {
-//   console.log(`Server running on port ${process.env.PORT || 3000}`);
-// });
+app.listen(process.env.PORT || 4000, function () {
+  console.log(`Server running on port ${process.env.PORT || 4000}`);
+});
+
+module.exports = app;
